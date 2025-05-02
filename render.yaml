@@ -1,0 +1,13 @@
+services:
+  - type: cron
+    name: eurovision-checker
+    schedule: "*/1 * * * *"  # Toutes les minutes
+    envVars:
+      - key: EMAIL_SENDER
+        value: ton.email@gmail.com
+      - key: EMAIL_PASSWORD
+        value: ton_mot_de_passe_application
+      - key: EMAIL_RECEIVER
+        value: ton.email@gmail.com
+    buildCommand: ""
+    startCommand: "python eurovision_checker.py"
